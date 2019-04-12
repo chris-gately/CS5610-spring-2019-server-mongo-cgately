@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
-modules.exports = mongoose.Schema({
+const multipleChoiceSchema = mongoose.Schema({
     choices: String,
     correct: Number
 })
+module.exports = multipleChoiceSchema

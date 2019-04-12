@@ -6,9 +6,6 @@ findAllStudents = () =>
 findStudentById = studentId =>
     studentModel.findById(studentId)
 
-findStudentByUsername = username =>
-    studentModel.findOne({username: username})
-
 createStudent = student =>
     studentModel.create(student)
 
@@ -19,7 +16,10 @@ updateStudent = (studentId, student) =>
 deleteStudent = studentId =>
     studentModel.remove({_id: studentId})
 
+clearStudents = () =>
+    studentModel.deleteMany({})
+
 
 module.exports = {
-    findAllStudents, findStudentById, createStudent, updateStudent
+    findAllStudents, findStudentById, createStudent, updateStudent, clearStudents
 }

@@ -22,7 +22,10 @@ updateAnswer = (answerId, answer) =>
 deleteAnswer = answerId =>
     answerModel.remove({_id: answerId})
 
+clearAnswers = () =>
+    answerModel.deleteMany({})
+
 module.exports = {
     findAllAnswers, findAnswerById, findAnswersByStudent, findAnswersByQuestion, createAnswer, updateAnswer,
-    deleteAnswer
+    deleteAnswer, clearAnswers
 }
