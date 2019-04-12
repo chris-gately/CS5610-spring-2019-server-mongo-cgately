@@ -1,6 +1,4 @@
-const mongoose = require('mongoose');
-const studentSchema = require('../models/student.schema.server');
-const studentModel = mongoose.model('StudentModel', studentSchema);
+const studentModel = require('../models/student.model.server');
 
 findAllStudents = () =>
     studentModel.find()

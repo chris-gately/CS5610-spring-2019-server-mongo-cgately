@@ -1,6 +1,4 @@
-const mongoose = require('mongoose');
-const answerSchema = require('../models/answer.schema.server');
-const answerModel = mongoose.model('AnswerModel', answerSchema);
+const answerModel = require('../models/answer.model.server');
 
 findAllAnswers = () =>
     answerModel.find()
