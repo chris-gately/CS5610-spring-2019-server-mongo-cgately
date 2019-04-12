@@ -14,4 +14,4 @@ const universityDao = require('../dao/university.dao.server')
 
 //universityDao.truncateDatabase()
 
-universityDao.populateDatabase()
+// universityDao.populateDatabase()

@@ -1,25 +1,54 @@
-const studentDao = require('../data/dao/student.dao.server')()
+const studentDao = require('../data/dao/student.dao.server')
 module.exports = app => {
     createStudent = (req, res) =>
-        res.json(studentDao.createStudent(req.body))
+        studentDao.createStudent(req.body)
+            .then(function(response){
+                if(response){
+                    res.send(response);
+                } else {
+                    res.send(0);
+                }
+            })
 
     findAllStudents = (req, res) =>
-        res.json(studentDao.findAllStudents())
+        studentDao.findAllStudents()
+            .then(function(response){
+                if(response){
+                    res.send(response);
+                } else {
+                    res.send(0);
+                }
+            })
 
     findStudentById = (req, res) =>
-        res.json(
-            studentDao.findStudentById(req.params['studentId'])
-        )
+        studentDao.findStudentById(req.params['studentId'])
+            .then(function(response){
+                if(response){
+                    res.send(response);
+                } else {
+                    res.send(0);
+                }
+            })
 
     deleteStudent = (req, res) =>
-        res.json(
-            studentDao.deleteStudent(req.params.studentId)
-        )
+        studentDao.deleteStudent(req.params['studentId'])
+            .then(function(response){
+                if(response){
+                    res.send(response);
+                } else {
+                    res.send(0);
+                }
+            })
 
     updateStudent = (req, res) =>
-        res.json(
-            studentDao.updateStudent(req.params.studentId, req.body)
-        )
+        studentDao.updateStudent(req.params['studentId'], req.body)
+            .then(function(response){
+                if(response){
+                    res.send(response);
+                } else {
+                    res.send(0);
+                }
+            })
 
     app.put('/api/student/:studentId', updateStudent)
     app.delete('/api/student/:studentId', deleteStudent)

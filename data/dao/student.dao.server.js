@@ -1,4 +1,4 @@
-const studentModel = require('../models/student.model.server');
+const studentModel = require('../models/student.model.server')
 
 findAllStudents = () =>
     studentModel.find()
@@ -21,5 +21,5 @@ clearStudents = () =>
 
 
 module.exports = {
-    findAllStudents, findStudentById, createStudent, updateStudent, clearStudents
+    findAllStudents, findStudentById, createStudent, updateStudent, clearStudents, deleteStudent
 }
