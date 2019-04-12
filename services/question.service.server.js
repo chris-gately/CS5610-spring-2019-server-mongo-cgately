@@ -1,7 +1,7 @@
-const studentDao = require('../data/dao/student.dao.server')
+const questionDao = require('../data/dao/question.dao.server')
 module.exports = app => {
-    createStudent = (req, res) =>
-        studentDao.createStudent(req.body)
+    createQuestion = (req, res) =>
+        questionDao.createQuestion(req.body)
             .then(function(response){
                 if(response){
                     res.send(response);
@@ -10,8 +10,8 @@ module.exports = app => {
                 }
             })
 
-    findAllStudents = (req, res) =>
-        studentDao.findAllStudents()
+    findAllQuestions = (req, res) =>
+        questionDao.findAllQuestions()
             .then(function(response){
                 if(response){
                     res.send(response);
@@ -20,8 +20,8 @@ module.exports = app => {
                 }
             })
 
-    findStudentById = (req, res) =>
-        studentDao.findStudentById(req.params['id'])
+    findQuestionById = (req, res) =>
+        questionDao.findQuestionById(req.params['id'])
             .then(function(response){
                 if(response){
                     res.send(response);
@@ -30,8 +30,8 @@ module.exports = app => {
                 }
             })
 
-    deleteStudent = (req, res) =>
-        studentDao.deleteStudent(req.params['id'])
+    deleteQuestion = (req, res) =>
+        questionDao.deleteQuestion(req.params['id'])
             .then(function(response){
                 if(response){
                     res.send(response);
@@ -40,8 +40,8 @@ module.exports = app => {
                 }
             })
 
-    updateStudent = (req, res) =>
-        studentDao.updateStudent(req.params['id'], req.body)
+    updateQuestion = (req, res) =>
+        questionDao.updateQuestion(req.params['id'], req.body)
             .then(function(response){
                 if(response){
                     res.send(response);
@@ -50,9 +50,9 @@ module.exports = app => {
                 }
             })
 
-    app.get('/api/student', findAllStudents)
-    app.post('/api/student', createStudent)
-    app.get('/api/student/:id', findStudentById)
-    app.put('/api/student/:id', updateStudent)
-    app.delete('/api/student/:id', deleteStudent)
+    app.get('/api/question', findAllQuestions)
+    app.post('/api/question', createQuestion)
+    app.get('/api/question/:id', findQuestionById)
+    app.put('/api/question/:id', updateQuestion)
+    app.delete('/api/question/:id', deleteQuestion)
 }

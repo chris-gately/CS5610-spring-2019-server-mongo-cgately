@@ -31,8 +31,10 @@ require('./data/db')()
 
 const studentService = require('./services/student.service.server.js')
 const universityService = require('./services/university.service.server')
+const questionService = require('./services/question.service.server')
 studentService(app)
 universityService(app)
+questionService(app)
 
 //sayHello = (req, res) => {
 //    const user = req.params['user']

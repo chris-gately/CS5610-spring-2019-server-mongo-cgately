@@ -50,7 +50,7 @@ populateDatabase = () =>
                     question: 'Is the following schema valid?',
                     points: 10,
                     questionType: 'TRUE_FALSE',
-                    isTrue: false
+                    trueFalse: {isTrue: false}
                 }
             )
         })
@@ -62,7 +62,7 @@ populateDatabase = () =>
                     question: 'DAO stands for Dynamic Access Object.',
                     points: 10,
                     questionType: 'TRUE_FALSE',
-                    isTrue: false
+                    trueFalse: {isTrue: false}
                 }
             )
         })
@@ -74,9 +74,9 @@ populateDatabase = () =>
                     question: 'What does JPA stand for?',
                     points: 10,
                     questionType: 'MULTIPLE_CHOICE',
-                    choices: 'Java Persistence API,Java Persisted Application,JavaScript Persistence API,' +
+                    multipleChoice: {choices: 'Java Persistence API,Java Persisted Application,JavaScript Persistence API,' +
                         'JSON Persistent Associations',
-                    correct: 1
+                        correct: 1}
                 }
             )
         })
@@ -88,9 +88,9 @@ populateDatabase = () =>
                     question: 'What does ORM stand for?',
                     points: 10,
                     questionType: 'MULTIPLE_CHOICE',
-                    choices: 'Object Relational Model,Object Relative Markup,Object Reflexive Model,' +
+                    multipleChoice: {choices: 'Object Relational Model,Object Relative Markup,Object Reflexive Model,' +
                         'Object Relational Mapping',
-                    correct: 4
+                        correct: 4}
                 }
             )
         })
