@@ -51,4 +51,4 @@ answerService(app)
 
 //app.post('/api/course', createCourse)
 //app.get('/hello/:user', sayHello)
-app.listen(3000);
+app.listen(process.env.PORT || 5000);
