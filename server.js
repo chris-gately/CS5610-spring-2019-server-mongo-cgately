@@ -53,4 +53,4 @@ answerService(app)
 //app.get('/hello/:user', sayHello)
 
 // Listen to heroku provided port
-app.listen(process.env.PORT);
+app.listen(process.env.PORT || 3000);
